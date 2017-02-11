@@ -76,7 +76,8 @@ function create(userParam) {
 
         // add hashed password to user object
         user.hash = bcrypt.hashSync(userParam.password, 10);
-
+        var book=new Map();
+        user.book=book;
         db.users.insert(
             user,
             function (err, doc) {
@@ -117,25 +118,48 @@ function update(_id, userParam) {
 
     function updateUser() {
         // fields to update
-        var set = {
-            firstName: userParam.firstName,
-            lastName: userParam.lastName,
-            username: userParam.username,
-        };
-
-        // update password if it was entered
-        if (userParam.password) {
-            set.hash = bcrypt.hashSync(userParam.password, 10);
-        }
-
-        db.users.update(
-            { _id: mongo.helper.toObjectID(_id) },
-            { $set: set },
-            function (err, doc) {
+        var exbook;
+        db.users.findOne(
+            { username: userParam.username },
+            function (err, user) {
                 if (err) deferred.reject(err.name + ': ' + err.message);
+                console.log(user);
+                exbook = user.book;
+                if(exbook == null)
+                {
+                    exbook = new Map();
+                }
+                exbook[userParam.book.name]= userParam.book;
+                var set = {
+                    firstName: userParam.firstName,
+                    lastName: userParam.lastName,
+                    username: userParam.username,
+                    book:exbook,
+                };
 
-                deferred.resolve();
+                // update password if it was entered
+                if (userParam.password) {
+                    set.hash = bcrypt.hashSync(userParam.password, 10);
+                }
+
+                db.users.update(
+                    { _id: mongo.helper.toObjectID(_id) },
+                    { $set: set },
+                    function (err, doc) {
+                        if (err) deferred.reject(err.name + ': ' + err.message);
+
+                        deferred.resolve();
+                    });
             });
+
+        /*if(exbook==undefined)
+        {
+            exbook=new Map();
+        }
+        console.log(userParam.book);
+        */
+
+
     }
 
     return deferred.promise;

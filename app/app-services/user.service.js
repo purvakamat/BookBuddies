@@ -15,6 +15,7 @@
         service.Create = Create;
         service.Update = Update;
         service.Delete = Delete;
+        service.addBook = addBook;
 
         return service;
 
@@ -40,6 +41,11 @@
 
         function Update(user) {
             return $http.put('/api/users/' + user._id, user).then(handleSuccess, handleError);
+        }
+
+        function addBook(user) {
+            console.log(user.book);
+            return $http.post('/api/users/current/' + user._id, user).then(handleSuccess, handleError);
         }
 
         function Delete(_id) {

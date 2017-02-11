@@ -21,5 +21,21 @@
             <button class="btn btn-primary" ng-click="vm.saveUser()">Save</button>
             <button class="btn btn-danger" ng-click="vm.deleteUser()">Delete</button>
         </div>
+
+
+        <div class="form-group">
+            <label for="book">Book</label>
+            <input type="text" id="book" class="form-control" ng-model="vm.book.name" required />
+            <label for="book">Author</label>
+            <input type="text" id="book1" class="form-control" ng-model="vm.book.author" required />
+            <label for="book">Genre</label>
+            <input type="text" id="book2" class="form-control" ng-model="vm.book.genre" required />
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" ng-click="vm.saveBook()">Save</button>
+        </div>
+
+
+
     </form>
 </div>

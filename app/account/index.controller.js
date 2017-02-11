@@ -9,9 +9,10 @@
         var vm = this;
 
         vm.user = null;
+        vm.book = null;
         vm.saveUser = saveUser;
         vm.deleteUser = deleteUser;
-
+        vm.saveBook = saveBook;
         initController();
 
         function initController() {
@@ -40,6 +41,18 @@
                 .catch(function (error) {
                     FlashService.Error(error);
                 });
+        }
+
+        function saveBook() {
+            vm.user.book=vm.book;
+            UserService.addBook(vm.user)
+                .then(function () {
+                    FlashService.Success('User updated');
+                })
+                .catch(function (error) {
+                    FlashService.Error(error);
+                });
+
         }
     }
 
