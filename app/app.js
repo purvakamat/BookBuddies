@@ -46,6 +46,7 @@
                 controllerAs: 'vm',
                 data: { activeTab: 'donate' }
             });
+
     }
 
     function run($http, $rootScope, $window) {
