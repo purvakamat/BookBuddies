@@ -9,6 +9,7 @@
         var vm = this;
 
         vm.user = null;
+        vm.searchBooks=search;
 
         initController();
 
@@ -18,6 +19,11 @@
                 vm.user = user;
             });
         }
+
+        function search(query){
+
+        }
+
     }
 
 })();

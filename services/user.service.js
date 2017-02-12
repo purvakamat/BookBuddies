@@ -124,17 +124,17 @@ function update(_id, userParam) {
             function (err, user) {
                 if (err) deferred.reject(err.name + ': ' + err.message);
                 console.log(user);
-                exbook = user.book;
+                /*exbook = user.book;
                 if(exbook == null)
                 {
                     exbook = new Map();
                 }
-                exbook[userParam.book.name]= userParam.book;
+                exbook[userParam.book.name]= userParam.book;*/
                 var set = {
                     firstName: userParam.firstName,
                     lastName: userParam.lastName,
                     username: userParam.username,
-                    book:exbook,
+                    book:userParam.book,
                 };
 
                 // update password if it was entered
