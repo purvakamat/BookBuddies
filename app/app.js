@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
     'use strict';
 
     angular
@@ -53,4 +53,5 @@
             angular.bootstrap(document, ['app']);
         });
     });
+
 })();
