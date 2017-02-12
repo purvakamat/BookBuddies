@@ -68,37 +68,24 @@
             <tbody>
 
             <tr>
-                <!--Course Name-->
-                <!-- Dropdown is populated from the database -->
                 <td>
-                    <select type="string"
-                            class="form-control"
-                            placeholder="Title"
-                            ng-model="model.coursename">
-
-                        <option ng-repeat="course in model.courses">{{course.coursename}}</option>
-                    </select>
+                    <input type="text"
+                           ng-model="model.number"
+                           placeholder="Title"/>
                 </td>
 
-                <!--Semester Name-->
                 <td>
-                    <select type="string"
-                            class="form-control"
-                            placeholder="Author"
-                            ng-model="model.semestername">
-                        <option ng-repeat="semester in model.semesters">{{semester.semestername}}</option>
-
-                    </select>
+                    <input type="text"
+                           ng-model="model.number"
+                           placeholder="Author"/>
                 </td>
 
-                <!-- # of Positions -->
                 <td>
                     <input type="number"
                            ng-model="model.number"
                            placeholder="Rating"/>
                 </td>
 
-                <!-- Professor Name -->
                 <td>
                     <input type="text"
                            ng-model="model.professor"
