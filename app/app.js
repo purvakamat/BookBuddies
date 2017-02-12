@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
     'use strict';
 
     angular
@@ -26,12 +26,12 @@
                 data: { activeTab: 'account' }
             })
             .state('library', {
-                    url: '/library',
-                    templateUrl: 'library/index.html',
-                    controller: 'Library.IndexController',
-                    controllerAs: 'vm',
-                    data: { activeTab: 'library' }
-                });
+                url: '/library',
+                templateUrl: 'library/index.html',
+                controller: 'Library.IndexController',
+                controllerAs: 'vm',
+                data: { activeTab: 'library' }
+            });
     }
 
     function run($http, $rootScope, $window) {
@@ -53,4 +53,5 @@
             angular.bootstrap(document, ['app']);
         });
     });
+
 })();

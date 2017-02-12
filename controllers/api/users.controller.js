@@ -10,6 +10,7 @@ router.get('/current', getCurrentUser);
 router.put('/:_id', updateUser);
 router.delete('/:_id', deleteUser);
 router.post('/current/:_id',addBook);
+router.get('/search',searchBook);
 
 module.exports = router;
 
@@ -37,6 +38,30 @@ function registerUser(req, res) {
         .catch(function (err) {
             res.status(400).send(err);
         });
+}
+
+function searchBook(req, res) {
+    userService.searchBooks(req.body)
+        .then(function (user) {
+            console.log(user)
+            if (user) {
+                res.send(user);
+            } else {
+                res.sendStatus(404);
+            }
+        })
+        .catch(function (err) {
+            res.status(400).send(err);
+        });
+ /*   var data = userService.searchBooks(req.body);
+    var array = new Array();
+    var some;
+    data.each(function(err, band) {
+        console.log(band);
+    });
+    console.log(some);
+    res.send(some);*/
+
 }
 
 function getCurrentUser(req, res) {
@@ -84,6 +109,9 @@ function addBook(req, res) {
             res.status(400).send(err);
         });
 }
+
+
+
 
 function deleteUser(req, res) {
     var userId = req.user.sub;
