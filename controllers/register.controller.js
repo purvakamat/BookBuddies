@@ -23,6 +23,7 @@ router.post('/', function (req, res) {
                 error: response.body,
                 firstName: req.body.firstName,
                 lastName: req.body.lastName,
+                city: req.body.city,
                 username: req.body.username
             });
         }
