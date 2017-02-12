@@ -29,6 +29,7 @@
                 {
                     if ((vm.user.query in vm.res[i].book))
                     {
+
                         arr1.push(vm.res[i]);
                     }
                 }
