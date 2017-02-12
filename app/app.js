@@ -24,7 +24,14 @@
                 controller: 'Account.IndexController',
                 controllerAs: 'vm',
                 data: { activeTab: 'account' }
-            });
+            })
+            .state('library', {
+                    url: '/library',
+                    templateUrl: 'library/index.html',
+                    controller: 'Library.IndexController',
+                    controllerAs: 'vm',
+                    data: { activeTab: 'library' }
+                });
     }
 
     function run($http, $rootScope, $window) {
