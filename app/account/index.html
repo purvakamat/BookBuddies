@@ -35,7 +35,12 @@
             <button class="btn btn-primary" ng-click="vm.saveBook()">Save</button>
         </div>
 
-
+        <ul class="list-group">
+            <div ng-repeat="x in vm.user.book">
+                <li class="list-group-item">{{x.name}} {{x.author}} {{x.genre}}
+                </li>
+            </div>
+        </ul>
 
     </form>
 </div>

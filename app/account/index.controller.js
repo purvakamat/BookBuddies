@@ -44,7 +44,8 @@
         }
 
         function saveBook() {
-            vm.user.book=vm.book;
+            var temp=JSON.parse(JSON.stringify(vm.book));
+            vm.user.book[temp.name] = temp;
             UserService.addBook(vm.user)
                 .then(function () {
                     FlashService.Success('User updated');
