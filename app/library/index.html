@@ -160,10 +160,10 @@
 </div>
 
 <!------------------------------------------------->
-<!--            Manage Library             -->
+<!--            My Library             -->
 <!------------------------------------------------->
 <div class="container ">
-    <h4 ><b>Library Manager</b></h4>
+    <h4 ><b>My Library</b></h4>
 
     <!-- Update Message -->
     <div ng-if="model.updatedmessage" class="alert alert-success">
@@ -229,12 +229,12 @@
                     </div>
                 </td>
 
-                <td>
-                    <div ng-if="x.lent === 'Lend'">
-                        <input type="text" class="form-control" placeholder="lend to" ng-model="x.lentname" value="">
+                <td width="200" align="center">
+                    <div ng-if="x.lent === 'Lend'" align="center">
+                        <input type="text" class="form-control" placeholder="lend to" ng-model="x.lentname" value="" style="width: 60%;">
                     </div>
-                    <div ng-if="x.lent === 'Take Back'">
-                        <input type="text"  class="form-control" placeholder="lend to"  nd-model="x.lentname" value={{x.lentname}} disabled>
+                    <div ng-if="x.lent === 'Take Back'" align="center">
+                        <input type="text"  class="form-control" placeholder="lend to"  nd-model="x.lentname" value={{x.lentname}} disabled style="width: 60%;">
                     </div>
                 </td>
 
@@ -252,5 +252,43 @@
             </tr>
         </table>
     </div>
+</div>
 
+<!------------------------------------------------->
+<!--            Borrowed             -->
+<!------------------------------------------------->
+<div class="container ">
+    <h4 ><b>Borrowed</b></h4>
+
+    <!-- Heading -->
+    <div class="table-responsive">
+        <table class="table table-hover">
+
+            <!-- Header for Position-->
+
+            <th>Title</th>
+            <th>Author</th>
+            <th>Genre</th>
+            <th>Borrowed from</th>
+
+            <tr>
+
+                <td>Open</td>
+                <td>Andre Agassi</td>
+                <td>Biogarphy</td>
+                <td>Sasanka</td>
+
+            </tr>
+
+            <tr>
+
+                <td>The Kite Runner</td>
+                <td>Khaled Hossaini</td>
+                <td>Fiction</td>
+                <td>Raghu</td>
+
+            </tr>
+
+        </table>
+    </div>
 </div>
