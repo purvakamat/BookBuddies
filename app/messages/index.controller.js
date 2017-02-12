@@ -27,7 +27,7 @@
    {
        if(k==1){
            document.getElementById("msg").value = "Hi, I am interested in reading Harry Potter. Can I please borrow it" +
-               "from  15th Feb to 1st March? Looking forward to hearing from you. Thanks.";
+               " from 15th Feb to 1st March? Looking forward to hearing from you. Thanks.";
        }
 
        if(k==2){
