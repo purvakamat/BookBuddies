@@ -32,6 +32,7 @@
                 controllerAs: 'vm',
                 data: { activeTab: 'library' }
             });
+
     }
 
     function run($http, $rootScope, $window) {

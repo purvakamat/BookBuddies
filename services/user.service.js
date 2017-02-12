@@ -15,6 +15,7 @@ service.create = create;
 service.update = update;
 service.delete = _delete;
 service.searchBooks = searchBooks;
+service.updateMessage=updateMessage;
 
 module.exports = service;
 
@@ -203,6 +204,64 @@ function update(_id, userParam) {
 
     return deferred.promise;
 }
+
+
+
+function updateMessage(_id, userParam) {
+    var deferred = Q.defer();
+
+    updateUser();
+
+    function updateUser() {
+        // fields to update
+        var exbook;
+        db.users.findOne(
+            { username: userParam.username },
+            function (err, user) {
+                if (err) deferred.reject(err.name + ': ' + err.message);
+                //console.log(user);
+                /*exbook = user.book;
+                 if(exbook == null)
+                 {
+                 exbook = new Map();
+                 }
+                 exbook[userParam.book.name]= userParam.book;*/
+                var set = {
+                    firstName: userParam.firstName,
+                    lastName: userParam.lastName,
+                    username: userParam.username,
+                    message:userParam.message,
+                    book:userParam.book,
+                };
+
+                // update password if it was entered
+                if (userParam.password) {
+                    set.hash = bcrypt.hashSync(userParam.password, 10);
+                }
+
+                db.users.update(
+                    { _id: mongo.helper.toObjectID(_id) },
+                    { $set: set },
+                    function (err, doc) {
+                        if (err) deferred.reject(err.name + ': ' + err.message);
+
+                        deferred.resolve();
+                    });
+            });
+
+        /*if(exbook==undefined)
+         {
+         exbook=new Map();
+         }
+         console.log(userParam.book);
+         */
+
+
+    }
+
+    return deferred.promise;
+}
+
 
 function _delete(_id) {
     var deferred = Q.defer();

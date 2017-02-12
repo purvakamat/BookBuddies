@@ -11,6 +11,7 @@ router.put('/:_id', updateUser);
 router.delete('/:_id', deleteUser);
 router.post('/current/:_id',addBook);
 router.get('/search',searchBook);
+router.put('/msg/:_id', updateMessage);
 
 module.exports = router;
 
@@ -93,6 +94,19 @@ function updateUser(req, res) {
             res.status(400).send(err);
         });
 }
+
+function updateMessage(req, res) {
+    var userId = req.user.sub;
+
+    userService.updateMessage(userId, req.body)
+        .then(function () {
+            res.sendStatus(200);
+        })
+        .catch(function (err) {
+            res.status(400).send(err);
+        });
+}
+
 
 function addBook(req, res) {
     var userId = req.user.sub;
