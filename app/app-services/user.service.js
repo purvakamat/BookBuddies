@@ -16,6 +16,7 @@
         service.Update = Update;
         service.Delete = Delete;
         service.addBook = addBook;
+        service.getBooks = getBooks;
 
         return service;
 
@@ -44,7 +45,7 @@
         }
 
         function addBook(user) {
-            console.log(user.book);
+
             return $http.post('/api/users/current/' + user._id, user).then(handleSuccess, handleError);
         }
 
@@ -52,9 +53,16 @@
             return $http.delete('/api/users/' + _id).then(handleSuccess, handleError);
         }
 
+
+        function getBooks(user) {
+            //console.log(user);
+            return $http.get('/api/users/search', user).then(handleSuccess, handleError);
+        }
+
         // private functions
 
         function handleSuccess(res) {
+            console.log(res.data);
             return res.data;
         }
 

@@ -14,6 +14,7 @@ service.getById = getById;
 service.create = create;
 service.update = update;
 service.delete = _delete;
+service.searchBooks = searchBooks;
 
 module.exports = service;
 
@@ -42,6 +43,7 @@ function getById(_id) {
         if (err) deferred.reject(err.name + ': ' + err.message);
 
         if (user) {
+            //console.log(user);
             // return user (without hashed password)
             deferred.resolve(_.omit(user, 'hash'));
         } else {
@@ -52,6 +54,40 @@ function getById(_id) {
 
     return deferred.promise;
 }
+
+function searchBooks(userParam) {
+   var deferred = Q.defer();
+
+    db.users.find().toArray(function(err, arr) {
+        if (err) deferred.reject(err.name + ': ' + err.message);
+
+        if (arr){
+            console.log(arr);
+            deferred.resolve(arr);
+        } else {
+            // user not found
+            deferred.resolve();
+        }
+
+    });
+    //   console.log("service: "+ result);
+    //   return result;
+    return deferred.promise;
+   // var deferred = Q.defer();
+  //  var bands = db.users.find({});
+
+    /*
+    bands.each(function(err, band) {
+        console.log(band);
+    });*/
+/*
+    if(bands) {
+    //        deferred.resolve(bands);
+    }
+    return bands;*/
+   // return deferred.promise;
+}
+
 
 function create(userParam) {
     var deferred = Q.defer();
@@ -64,6 +100,7 @@ function create(userParam) {
 
             if (user) {
                 // username already exists
+              //  console.log(user);
                 deferred.reject('Username "' + userParam.username + '" is already taken');
             } else {
                 createUser();
@@ -89,6 +126,8 @@ function create(userParam) {
 
     return deferred.promise;
 }
+
+
 
 function update(_id, userParam) {
     var deferred = Q.defer();
@@ -123,7 +162,7 @@ function update(_id, userParam) {
             { username: userParam.username },
             function (err, user) {
                 if (err) deferred.reject(err.name + ': ' + err.message);
-                console.log(user);
+                //console.log(user);
                 /*exbook = user.book;
                 if(exbook == null)
                 {
