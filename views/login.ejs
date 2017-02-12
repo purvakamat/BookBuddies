@@ -1,11 +1,13 @@
 ﻿<%- include('partials/header') %>
 <div class="form-container">
-    <h2>Login</h2>
+    <h1><center>Welcome to BookBuddies</center></h1>
+    <h4>Already have an account?</h4>
+    <h3>Login:</h3>
     <% if(locals.error) { %>
-        <div class="alert alert-danger"><%= error %></div>
+    <div class="alert alert-danger"><%= error %></div>
     <% } %>
     <% if(locals.success) { %>
-        <div class="alert alert-success"><%= success %></div>
+    <div class="alert alert-success"><%= success %></div>
     <% } %>
     <form method="post">
         <div class="form-group">
@@ -22,4 +24,3 @@
         </div>
     </form>
 </div>
-<%- include('partials/footer') %>

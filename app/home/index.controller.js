@@ -20,7 +20,21 @@
             });
         }
 
-        function search(query){
+        function search(){
+        //    console.log(vm.user.query);
+            UserService.getBooks(vm.user).then(function (user) {
+                vm.res = user;
+                var arr1=[]
+                for (var i =0;i<vm.res.length;i++)
+                {
+                    if ((vm.user.query in vm.res[i].book))
+                    {
+                        arr1.push(vm.res[i]);
+                    }
+                }
+                vm.res=arr1;
+                console.log(vm.res);
+            });
 
         }
 

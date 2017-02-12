@@ -1,0 +1,118 @@
+﻿<br>
+<div class="form-container">
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Genre</th>
+                <th>Rating</th>
+            </tr>
+            </thead>
+
+            <!-- Table Body-->
+            <tbody>
+
+            <tr>
+                <td>
+                    <input type="text" class="form-control" ng-model="vm.book.name" placeholder="Title"/>
+                </td>
+
+                <td>
+                    <input type="text" class="form-control" ng-model="vm.book.author" placeholder="Author"/>
+                </td>
+
+                <td>
+                    <input type="text" class="form-control" ng-model="vm.book.genre" placeholder="Genre"/>
+                </td>
+
+                <td>
+                    <input type="number" class="form-control"  placeholder="Rating"/>
+                </td>
+
+                <td>
+                    <a ng-click="vm.saveBook()" class="btn btn-block btn-primary"> Add Book </a>
+                </td>
+            </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>
+
+<!------------------------------------------------->
+<!--            Manage Library             -->
+<!------------------------------------------------->
+<div class="container ">
+    <h4 ><b>Library Manager</b></h4>
+
+    <!-- Update Message -->
+    <div ng-if="model.updatedmessage" class="alert alert-success">
+        {{model.updatedmessage}}
+    </div>
+
+    <!-- Heading -->
+    <div class="table-responsive">
+        <table class="table table-hover">
+
+            <!-- Header for Position-->
+
+            <th>Title
+            </th>
+
+
+            <th>Author</th>
+            <th>
+                Genre
+            </th>
+            <th>
+                Rating
+            </th>
+
+
+
+            <th>Delete Book</th>
+
+
+            <tr ng-repeat="x in vm.user.book">
+
+
+                <!--Course-->
+
+                <td>
+                    <!--<select type="string"
+                            class="form-control"
+                            placeholder="coursename"
+                            ng-model="position.course">
+
+                        <option ng-repeat="course in model.courses">{{course.coursename}}</option>
+
+                    </select>-->
+                    {{x.name}}
+                </td>
+
+                <!--Semester-->
+                <td>
+
+                    {{x.author}}
+                </td>
+                <td>{{x.genre}}</td>
+                <td>1</td>
+
+                <!--# Positions-->
+
+
+
+
+                <!--Delete Position Button-->
+                <td>
+                    <a class="glyphicon glyphicon-trash makeblack"
+                       ng-click=""></a>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+
+</div>
