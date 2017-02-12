@@ -1,11 +1,11 @@
-﻿<br>
-<div>
+﻿
+<div class="container">
     <div class="row">
         <div class="col-sm-3">
             <img src="images\profile_default.jpg" height="200" width="200"/>
         </div>
         <div class="col-sm-9">
-            <h1>{{vm.user.firstName + " " + vm.user.lastName}}</h1>
+            <h2>{{vm.user.firstName + " " + vm.user.lastName}}</h2>
         </div>
     </div>
 
@@ -34,9 +34,9 @@
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group">
-                            <label for="bio">Bio</label>
+                            <label for="bio">Message</label>
                             <textarea placeholder="Enter you information here"
-                                      name="bio" id="bio" class="form-control" rows="8" cols="16">Hi! I am a grad student at Northeastern University.I am an avid book reader and collector.Check out my collection and feel free to borrow any if you like.
+                                      name="bio" id="bio" class="form-control" rows="12" cols="16">Hi! I am a grad student at Northeastern University.I am an avid book reader and collector.Check out my collection and feel free to borrow any if you like.
                             </textarea>
                         </div>
                     </div>
@@ -49,18 +49,26 @@
                             <input type="text" name="addressLine1" id="addressLine1" class="form-control" required />
                         </div>
                         <div class="form-group">
-                            <label for="addressLine2">Address Line 2</label>
-                            <input type="text" name="addressLine2" id="addressLine2" class="form-control" required />
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-group">
                             <label for="city">City</label>
                             <input type="text" name="city" id="city" class="form-control" required />
                         </div>
                         <div class="form-group">
+                            <label for="zip">Zip Code</label>
+                            <input type="number" name="zip" id="zip" class="form-control" required />
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="addressLine2">Address Line 2</label>
+                            <input type="text" name="addressLine2" id="addressLine2" class="form-control" required />
+                        </div>
+                        <div class="form-group">
                             <label for="state">State</label>
                             <input type="text" name="state" id="state" class="form-control" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="number" name="phone" id="phone" class="form-control" required >
                         </div>
                     </div>
                 </div>
@@ -68,7 +76,7 @@
                 <div class = row>
                     <center><div class="col">
                         <button class="btn btn-primary" ng-click="vm.saveUser()">Save</button>
-                        &nbsp&nbsp&nbsp&nbsp
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <button class="btn btn-danger" ng-click="vm.deleteUser()">Delete</button>
                         </div>
                     </center>

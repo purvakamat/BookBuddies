@@ -31,6 +31,20 @@
                 controller: 'Library.IndexController',
                 controllerAs: 'vm',
                 data: { activeTab: 'library' }
+            })
+            .state('messages', {
+                url: '/messages',
+                templateUrl: 'messages/index.html',
+                controller: 'Messages.IndexController',
+                controllerAs: 'vm',
+                data: { activeTab: 'messages' }
+            })
+            .state('donate', {
+                url: '/donate',
+                templateUrl: 'donate/index.html',
+                controller: 'Donate.IndexController',
+                controllerAs: 'vm',
+                data: { activeTab: 'donate' }
             });
     }
 
@@ -53,5 +67,4 @@
             angular.bootstrap(document, ['app']);
         });
     });
-
 })();
