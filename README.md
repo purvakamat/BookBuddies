@@ -1,5 +1,5 @@
 
-BookBuddies
+###BookBuddies
 
 Most people love reading paper back books as opposed to buying soft copies. But, it is expensive to buy every book you want to read. BookBuddies allows you to create a trusted network of people to lend and borrow books. It is a social networking site for book lovers.
 
@@ -9,16 +9,22 @@ You can share you books by creating a virtual library on your profile. Add infor
 
 Below are some of the features that we currently support and will support in the future:
 
-BookBuddies Allows you to search for books you want to read and list the book and the owner so you can contact them.
+**BookBuddies** 
+Allows you to search for books you want to read and list the book and the owner so you can contact them.
 
-Profile You can put down your details, contact information and also a message you want to share with the readers.
+**Profile** 
+You can put down your details, contact information and also a message you want to share with the readers.
 
-My Library You list all your books here for people to see and borrow.
+**My Library** 
+You list all your books here for people to see and borrow.
 
-Messages You can easily contact the people you have lent books to or borrowed from through our messaging feature.
+**Messages**
+You can easily contact the people you have lent books to or borrowed from through our messaging feature.
 
-Donate If you have some books you feel you don't want to read again, feel free to donate them to non-profit organizations who will share them with children and adults in need. Here is where we share some details about these organizations to help you get in touch with them.
+**Donate**
+If you have some books you feel you don't want to read again, feel free to donate them to non-profit organizations who will share them with children and adults in need. Here is where we share some details about these organizations to help you get in touch with them.
 
 Additional features we want to add in the future:
 
-Trust score We will allow the person you borrowed a book from to rate your on how well you maintained their book and whether you returned the book to them on time . This will help people decide if they really want to share their book with you.
+**Trust score**
+We will allow the person you borrowed a book from to rate your on how well you maintained their book and whether you returned the book to them on time . This will help people decide if they really want to share their book with you.
